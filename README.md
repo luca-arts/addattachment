@@ -26,3 +26,7 @@ A VR environment will be created in which we'll capture biometrics as well as us
 
 1. how to start?
 2. where to find which files
+
+### additional information
+
+check out the [interesting links page](links.md)
