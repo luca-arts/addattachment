@@ -1,15 +1,17 @@
-# Welcome to GitHub Page for the TrustVR project
+# TrustVR
 
-## TrustVR
+## Welcome to GitHub Page for the TrustVR project
 
-### description
+### TrustVR
+
+#### description
 
 TrustVR is a research project initiated by the KUL department Clinical Psychology.
 
 A VR environment will be created in which we'll capture biometrics as well as user responses.
 
 
-### collaboration
+#### collaboration
 
 - KU Leuven Clinical Psychology:
     1. Guy Bosmans
@@ -20,7 +22,7 @@ A VR environment will be created in which we'll capture biometrics as well as us
     2. Wouter Devriese
     3. Kasper Jordaens
 
-## repository structure
+### repository structure
 
 1. how to start?
 2. where to find which files
