@@ -31,9 +31,17 @@ public class ResponseList : MonoBehaviour
     }
 
 
-    //public string GetResponse(int index, bool goodOrBad)
-    //{
-    //    return responses[index];
-    //}
+    public string GetResponse(int index, bool goodOrBad)
+    {
+        if (goodOrBad)
+        {
+            return goodResponses[index];
+        }
+        else
+        {
+            return badResponses[index];
+        }
+
+    }
 }
    
