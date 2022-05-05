@@ -5,3 +5,5 @@
 [create a text sign (2D)](https://www.youtube.com/watch?v=ZVh4nH8Mayg)
 
 [create a text sign (3D)](https://www.youtube.com/watch?v=GuWEXBeHEy8)
+
+[state machine in unity](https://www.youtube.com/watch?v=Vt8aZDPzRjI)
