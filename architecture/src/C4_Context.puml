@@ -1,0 +1,19 @@
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(child, "child", "person under test")
+Person(researcher, "researcher", "person facilitating test")
+
+Container(VR_headset, "VR headset", "Technology", "Optional Description")
+Container(EEG_headset, "EEG headset", "Technology", "Optional Description")
+Container(GSR, "skin conductance measurement", "Technology", "Optional Description")
+
+Container(computer, "data capturing station", "Technology", "Optional Description")
+
+System(systemAlias, "Label", "Optional Description")
+
+Rel(VR_headset, computer, "transmits data (eyetracking, game metrics) to", "via WiFi")
+Rel(EEG_headset, computer, "transmits data (eeg) to ","via BLE")
+Rel(GSR, computer, "transmits data (skin conductance) to via WiFi")
+
+@enduml
