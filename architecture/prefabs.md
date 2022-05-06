@@ -16,8 +16,6 @@ Also the caregiver can be shaped via this prefab? (if the child gets to form the
    2. `Trial`
    3. `endTrial` 
 
-
-
 ### trialListPrefab:
 1. a list of all upcoming trials
     1. each trial is calculated according to `public int contingencyLevel` to have a distribution of good and bad trials.
