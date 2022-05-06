@@ -7,3 +7,5 @@
 [create a text sign (3D)](https://www.youtube.com/watch?v=GuWEXBeHEy8)
 
 [state machine in unity](https://www.youtube.com/watch?v=Vt8aZDPzRjI)
+
+[writing unit tests](https://www.raywenderlich.com/9454-introduction-to-unity-unit-testing)

@@ -13,10 +13,9 @@ Also the caregiver can be shaped via this prefab? (if the child gets to form the
 
 1. keeps track where we are in a trial:
    1. `preTrial`:
-      1. if `practicalSetup`: [caregivers](#caregiverprefab) `canBeActivated` is set to True until `startTrial` is activated
    2. `Trial`
    3. `endTrial` 
-      1. if `emotionalSetup`: [caregivers](#caregiverprefab) `canBeActivated` is set to True until `nextTrial` is activated
+
 
 
 ### trialListPrefab:
@@ -33,11 +32,14 @@ Also the caregiver can be shaped via this prefab? (if the child gets to form the
 ### caregiverPrefab:
 1. a model with animation rigging
 2. public bool `canBeActivated`: makes it possible to activate the caregiver
-3. public bool `isActivated`: 
+   1. if `practicalSetup` & `preTrial`: [caregivers](#caregiverprefab) `canBeActivated` is set to True until `startTrial` is activated OR `hasBeenActivated` is set to true
+   2. if `emotionalSetup` & `postTrial`: [caregivers](#caregiverprefab) `canBeActivated` is set to True until `nextTrial` is activated OR `hasBeenActivated` is set to true
+4. public bool `isActivated`: 
    1. when activated the caregiver reads a random line of one of both [responseLists](#responselistprefab) according to the `contingencyMode`
-4. two versions: practical & emotional:
-   1. practical:
-       1.  
+   2. also private bool `hasBeenActivated` gets set to true UNTIL `nextTrial` signal is given.
+5. two versions: practical & emotional:
+   1. four differing lists of possible responses.
+   
 ### responseListPrefab
 1. we need four lists:
    1. emotional responses:
