@@ -28,7 +28,11 @@ public class ResponseList : MonoBehaviour
             badResponses = Resources.Load<TextAsset>("PracticalBad").text.Split('\n');
         }
     }
-
+    /// <summary>
+    /// returns the length of responses written in the response file.
+    /// </summary>
+    /// <param name="goodorBad">a boolean to choose good (True) or bad (False) responses</param>
+    /// <returns>an integer defining the length</returns>
     public int GetLengthResponses(bool goodorBad)
     {
         if (goodorBad)
@@ -40,7 +44,12 @@ public class ResponseList : MonoBehaviour
             return badResponses.Length;
         }
     }
-
+    /// <summary>
+    /// returns the response at line 'index' from the good or bad response lists.
+    /// </summary>
+    /// <param name="index">which row, should be less than the max length</param>
+    /// <param name="goodOrBad">true: Good responses, false: bad responses</param>
+    /// <returns>a string</returns>
 public string GetResponse(int index, bool goodOrBad)
     {
         if (goodOrBad)

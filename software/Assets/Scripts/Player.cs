@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Adds the score obtained in a trial to the player's total score
+    /// </summary>
     public void UpdateScore()
     {
         totalScore += score;

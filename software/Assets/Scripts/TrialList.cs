@@ -30,6 +30,10 @@ public class TrialList : MonoBehaviour
         }
         currentTrial = 0;
     }
+    /// <summary>
+    /// get to know what the current trial is, defined by its index, its good or bad values, etc.
+    /// </summary>
+    /// <returns></returns>
     public Trial GetCurrentTrial()
     {
         return trialsList[currentTrial];

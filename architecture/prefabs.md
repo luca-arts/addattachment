@@ -25,6 +25,7 @@ Also the caregiver can be shaped via this prefab? (if the child gets to form the
           2. exclusion/normal game for ostracity
 2. keeps track of current trial via `private int currentTrial`
    1. if a `nextTrial` signal is given, `currentTrial` goes up if not last trial
+      1. we store the important values in 'playerprefs': [playerprefs](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html) or via a singleton: [singleton](https://stackoverflow.com/questions/67067412/unity-reset-score-to-0-on-replay)
    2. otherwise we show an endImage
 
 ### caregiverPrefab:
@@ -60,3 +61,8 @@ Also the caregiver can be shaped via this prefab? (if the child gets to form the
 
 1. a 2D image being presented in which the child must indicate on a line how much (s)he trusts the caregiver.
 
+### text balloon
+
+1. a 3D balloon, oriented towards the player
+2. should show text very clearly
+3. show some particles to draw attention?

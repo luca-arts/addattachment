@@ -16,7 +16,9 @@ public class Scoreboard : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Update the score boards values for each player
+    /// </summary>
     public void UpdateScoreboard()
     {
         foreach (Player player in players)
