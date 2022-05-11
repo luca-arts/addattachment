@@ -66,3 +66,4 @@ Also the caregiver can be shaped via this prefab? (if the child gets to form the
 1. a 3D balloon, oriented towards the player
 2. should show text very clearly
 3. show some particles to draw attention?
+

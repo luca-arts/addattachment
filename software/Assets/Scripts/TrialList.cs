@@ -9,10 +9,9 @@ public class TrialList : MonoBehaviour
     public int contingencyLevel; // between 0 and 100
     public int numberOfTrials; // TBD
     [SerializeField] private List<Trial> trialsList; // list of trials to be used in block of experiment
-    public int currentTrial; // where we are currently in the block
+    public int currentTrial = 0; // where we are currently in the block
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         trialsList = new List<Trial>();
         for (int i = 0; i < numberOfTrials; i++)
@@ -28,7 +27,11 @@ public class TrialList : MonoBehaviour
             );
             trialsList.Add(newTrial);
         }
-        currentTrial = 0;
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
     /// <summary>
     /// get to know what the current trial is, defined by its index, its good or bad values, etc.
