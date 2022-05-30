@@ -13,7 +13,7 @@ public class StateMgrTest
     [OneTimeSetUp]
     public void LoadScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("DemoScene");
     }
 
     [UnityTest]

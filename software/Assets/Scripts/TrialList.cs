@@ -18,7 +18,7 @@ public class TrialList : MonoBehaviour
         {
             Trial newTrial = new Trial();
 
-            newTrial.createTrial(
+            newTrial.CreateTrial(
                 i,
                /*isGoodTrial is true for contingencyLevel percent of the time*/
                (Random.Range(0, 100) < contingencyLevel), //TODO check if this is the intended behaviour!

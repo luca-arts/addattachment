@@ -1,5 +1,9 @@
 # overview of all prefabs
 
+## imports
+
+Make sure you import the Tobii.XR and PicoXR SDK packages
+
 ## list
 
 
@@ -60,10 +64,50 @@ Also the caregiver can be shaped via this prefab? (if the child gets to form the
 ### caregiverScoringPrefab
 
 1. a 2D image being presented in which the child must indicate on a line how much (s)he trusts the caregiver.
+2. the score is saved via the [saveMetricsPrefab](#saveMetricsPrefab)
+3. 
+
+### saveMetricsPrefab
+
+a prefab which has one/multiple files open to write to them
 
 ### text balloon
 
 1. a 3D balloon, oriented towards the player
 2. should show text very clearly
 3. show some particles to draw attention?
+
+
+### Login screen prefab
+When the child enters the game for the first time, we need to show a text block in which all steps are explained.
+
+### chooseTeamPrefab
+child gets to see in-game menu to choose team from, this is a screen that is fixed in position, the child can look away from it towards the caregiver.
+if this is shown, no players should be on the field.
+
+## Issues
+
+when parenting a ball, strange things happen. I think it's primarily because the ball was moving before and I've parented it with keeping the location. Yet this does probably NOT stop the movement due to the mass of the object? therefore the ball can be at large distances instead of attached to the hand (as intended)
+
+
+Project settings ==> Player ==> Scripting Define Symbols ==> DEFINE_NAME ==> #if DEFINE_NAME #endif possible!
+
+set all environment things to a layer and lock it
+
+[System.Serializable] boven een class maakt dat je niet monobehavior component kan scripten
+
+[colliders overview!](https://docs.unity3d.com/Manual/CollidersOverview.html)
+
+preferences ==> general ==> Script changes while playing
+
+[tooltip attributes](https://docs.unity3d.com/ScriptReference/TooltipAttribute.html)
+
+
+[Slerp](https://docs.unity3d.com/ScriptReference/Vector3.Slerp.html)
+
+
+
+### questions
+
+data bijhouden: 1 grote file of liever per topic aparte file, in 1 folder per kind?
 

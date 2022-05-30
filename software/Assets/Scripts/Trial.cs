@@ -10,7 +10,7 @@ public class Trial
     [SerializeField] private bool isGoodResponse; // true if the caregiver must give a supportive/useful feedback, false if negative feedback.
     [SerializeField] private TrialType trialType; // emotional or practical
 
-    public void createTrial(int trialNumber, bool isGoodTrial, bool isGoodResponse, TrialType trialType)
+    public void CreateTrial(int trialNumber, bool isGoodTrial, bool isGoodResponse, TrialType trialType)
     {
         this.trialNumber = trialNumber;
         this.isGoodTrial = isGoodTrial;
