@@ -77,6 +77,28 @@ a prefab which has one/multiple files open to write to them
 2. should show text very clearly
 3. show some particles to draw attention?
 
+## ball
+
+the ball has a state machine:
+1. being grabbed
+	1. the ball is interactable by a player
+	2. the ball changes to this state when in a certain radius of the player and a raycast hits 
+2. being attached
+	1. the ball is parented to a player's hand
+	2. the ball changes to this state when collided with the players hand
+	3. the player does not look anymore to the ball itself. (if the ball's parent is itself or a child of itselves, don't look)
+3. being thrown
+	1. by an NPC: via slerp
+		1. after x time, at y speed
+	2. by the player: via XR rig
+		1. with assistance if needed (boolean or floating range of support)
+		2. 
+4. being idle
+	1. can be attracted if close enough?
+	2. should be destroyed and respawn in **a** players hand after x time
+	3. a ball gets in the idle state if the child did throw the ball and it's not close enough for the other players to attract the ball.
+
+
 
 ### Login screen prefab
 When the child enters the game for the first time, we need to show a text block in which all steps are explained.

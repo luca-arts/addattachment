@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations.Rigging;
-
+using UnityEngine.Animations;
 
 //TODO check https://www.youtube.com/watch?v=Qzgyq5Youd0&ab_channel=bugzilla2001
 
@@ -21,24 +20,18 @@ public class PlayBall : MonoBehaviour
     public float attractForce = 800.0f;
     //repelForce is the force at which the ball will be repelled by the player TOWARDS the other player or child
     public float repelForce = 500.0f;
-    //vertOffset is the offset given in the force of the ball so we toss it in a curve.
-    public float vertOffset = 1.0f;
+
     //based on the isGoodTrial boolean we decide if we need to pass to the NPC or to either NPC/child
     private bool isGoodTrial;
     [SerializeField] private Trial currentTrial;
 
     public Vector3 collision = Vector3.zero;
     public GameObject lastHit;
-    [SerializeField] private FixedJoint currentJoint;
+    private FixedJoint currentJoint;
     private Quaternion _lookRotation;
 
     public bool isTossed = false;
 
-    public Rig rig;
-
-    [SerializeField] private GameObject ballCatcher;
-    private Ball ballScript;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -46,49 +39,41 @@ public class PlayBall : MonoBehaviour
         //wait for the trial list to be filled
         currentTrial = trialList.GetCurrentTrial();
         isGoodTrial = currentTrial.IsGoodTrial();
-        rig = GameObject.Find("ArmRig").GetComponent<Rig>();
-        ballCatcher = GameObject.Find("ballCatcher");
-        ballScript = ball.GetComponent<Ball>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentJoint)
+        if (currentJoint != null)
         {
-            //if (isGoodTrial)
-            //{
-            //    float coinToss = 0.1f; // Random.Range(0.0f, 1.0f); TODO
-            //    if (coinToss > 0.5f) //TODO define a useful value?
-            //    {
-            //        Debug.Log("next is child");
-            //        TossBall(Child);
-            //    }
-            //    else
-            //    {
-            //        Debug.Log("next is " + NPC.name);
-            //        TossBall(NPC);
-            //    }
-            //}
-            //else
-            //{
-            //    Debug.Log("next is " + NPC.name);
-            //    TossBall(NPC);
-            //}
+            if (isGoodTrial)
+            {
+                float coinToss = Random.Range(0.0f, 1.0f);
+                if (coinToss > 0.5) //TODO define a useful value?
+                {
+                    Debug.Log("next is child");
+                    TossBall(Child);
+                }
+                else
+                {
+                    Debug.Log("next is " + NPC.name);
+                    TossBall(NPC);
+                }
+            }
+            else
+            {
+                Debug.Log("next is " + NPC.name);
+                TossBall(NPC);
+            }
         }
         else
         {
             //if the ball has been tossed, we don't want to attract it right away
             if (!isTossed)
             {
-
-                if ((ball.transform.position - transform.position).magnitude < attractDist && ball.transform.parent == null)
+                if ((ball.transform.position - transform.position).magnitude < attractDist && !currentJoint)
                 {
                     AttractBall();
-                }
-                else if (ball.transform.parent == ballCatcher.transform)
-                { //we lower the influence on the arms
-                    rig.weight = 0.0f;
                 }
             }
         }
@@ -102,25 +87,28 @@ public class PlayBall : MonoBehaviour
         _lookRotation = Quaternion.LookRotation((partner.transform.position - transform.position).normalized);
         transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, speed * Time.deltaTime);
         // then we check if we're aimed at the other player
+        RaycastHit hit;
         var ray = new Ray(this.transform.position, partner.transform.position - this.transform.position);
-        if (Physics.Raycast(ray, out RaycastHit hit, 50.0f, layerMask: LayerMask.GetMask("Player")))
+        if (Physics.Raycast(ray, out hit, 50.0f, layerMask: LayerMask.GetMask("Player")))
         {
-            Debug.DrawRay(transform.position, partner.transform.position - this.transform.position * hit.distance, Color.blue); //debug help
+            Debug.DrawRay(transform.position, partner.transform.position - this.transform.position * hit.distance, Color.blue);
 
             if (hit.collider.gameObject == partner)
             {
                 //if we are, we add a force to the ball aimed at the partner
-                collision = hit.point; //debug help
-                //ball.GetComponent<Rigidbody>().useGravity = true;
-                Vector3 direction = partner.transform.position - this.transform.position + Vector3.up * vertOffset;
-                Destroy(currentJoint);
-                ballScript.SetNextTarget(partner);
-                ballScript.TossBall(direction.normalized,repelForce);
-                //we enable the lookatconstraint again
-                //this.GetComponentInChildren<LookAtConstraint>().constraintActive = true;
-                //we set the ball to tossed, so we don't attract it again
-                isTossed = true;
-                
+                {
+                    collision = hit.point;
+                    if (hit.collider.gameObject == partner)
+                    {
+                        Vector3 direction = partner.transform.position - this.transform.position;
+                        Destroy(currentJoint);
+                        ball.GetComponent<Rigidbody>().AddForce(direction.normalized * repelForce);
+                        //we enable the lookatconstraint again
+                        this.GetComponent<LookAtConstraint>().constraintActive = true;
+                        //we set the ball to tossed, so we don't attract it again
+                        isTossed = true;
+                    }
+                }
             }
         }
     }
@@ -131,25 +119,41 @@ public class PlayBall : MonoBehaviour
         RaycastHit hit;
         var ray = new Ray(this.transform.position, ball.transform.position - this.transform.position);
         if (Physics.Raycast(ray, out hit, attractDist, layerMask: LayerMask.GetMask("Ball")))
-        {
-            if (hit.collider.gameObject.CompareTag("Ball"))
+        {   
+            if (hit.collider.gameObject == ball)
             {
                 Debug.DrawRay(transform.position, (ball.transform.position - this.transform.position) * hit.distance, Color.yellow);
-                lastHit = hit.transform.gameObject; //debug help
-                collision = hit.point; //debug help
-                var step = speed * Time.deltaTime;
-                ball.transform.position = Vector3.MoveTowards(ball.transform.position, transform.position, step);
-
-                //draw a line to make it clear that the ball is attracted to the player
-                LineRenderer lineRenderer = ball.GetComponent<LineRenderer>();
-                lineRenderer.SetPosition(0, transform.position);
-                lineRenderer.SetPosition(1, ball.transform.position);
-
+                {
+                    lastHit = hit.transform.gameObject;
+                    collision = hit.point;
+                    var step = speed * Time.deltaTime;
+                    ball.transform.position = Vector3.MoveTowards(ball.transform.position, transform.position, step);
+                    
+                    //draw a line to make it clear that the ball is attracted to the player
+                    LineRenderer lineRenderer = ball.GetComponent<LineRenderer>();
+                    lineRenderer.SetPosition(0, transform.position);
+                    lineRenderer.SetPosition(1, ball.transform.position);
+                }
             }
         }
     }
 
-    
+    /// <summary>
+    /// when the ball collides with the player or child, we want to create a joint between the ball and the player or child
+    /// also, we want to put the lookat constraint on inactive until we toss the ball
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ball"))
+        {
+            currentJoint = collision.gameObject.AddComponent<FixedJoint>();
+            currentJoint.connectedBody = this.GetComponent<Rigidbody>();
+            this.GetComponent<LookAtConstraint>().constraintActive = false;
+            //we put the isTossed variable of the other players to false, so they can attract the ball
+            NPC.GetComponent<PlayBall>().isTossed = false;
+        }
+    }
 
     private void OnDrawGizmos()
     {
