@@ -10,10 +10,13 @@ public class GazeEvent : UnityEvent<float, string>
 {
 }
 
+
+
 public class GazeFocus : MonoBehaviour, IGazeFocusable
 {
     [SerializeField] UnityEvent m_GazeActivedEvent;
     [SerializeField] UnityEvent m_GazeDeactivedEvent;
+
 
     public void GazeFocusChanged(bool hasFocus)
     {
@@ -21,12 +24,14 @@ public class GazeFocus : MonoBehaviour, IGazeFocusable
         // start unity event
         if (hasFocus)
         {
+
             Debug.Log("Gaze Focus Changed to true");
             m_GazeActivedEvent?.Invoke();
 
         }
         else
         {
+
             Debug.Log("Gaze Focus Changed to false");
             m_GazeDeactivedEvent?.Invoke();
         }

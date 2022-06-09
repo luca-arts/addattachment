@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEngine;
 using Tobii.XR;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Assets.Scripts.BallNS
 {
@@ -14,15 +16,27 @@ namespace Assets.Scripts.BallNS
     /// </summary>
     internal class BallStateMachine : MonoBehaviour
     {
+        [SerializeField]
         private GameObject ballOwner;
+
         private GameObject ball;
+
         private Rigidbody ballRb;
+
         public bool IsObjectGrabbing { get; private set; }
 
-        [SerializeField] private GameObject nextTarget; // nextTarget should get it's value from the ball's script
-        public GameObject player1;
-        public GameObject player2;
-        private enum GrabState
+        private BallTarget ballTarget;
+
+        [SerializeField]
+        private GameObject nextTarget; // nextTarget should get it's value from the ball's script
+
+        public GameObject[] players;
+
+        public GameObject child;
+
+        public string triggerTag = "BallCatcher"; //"Player";
+
+        public enum GrabState
         {
             Idle,
             Attract,
@@ -30,38 +44,81 @@ namespace Assets.Scripts.BallNS
             Throw
         }
 
+        [SerializeField]
         private GrabState _currentGrabState = GrabState.Idle;
 
+        [SerializeField]
+        private XRGrabInteractable _grabInteractable;
 
         // Fields related to animating the object flying to the hand.
         private float _grabAnimationProgress;
+
         private Vector3 _startPosition;
+
         private Vector3 _endPosition;
+
         private Quaternion _startControllerRotation;
+
         private Quaternion _startObjectRotation;
+
         private float _flyToControllerTimeSeconds = 0.8f;
+
         private AnimationCurve _animationCurve;
+
         private GameObject _grabbedObject;
+
         private bool ballHasTriggered = false; // a boolean which is being set to true when the ball triggers the nextTargets ballCatcher collider
+
         private float idleTime = 0.0f;
-        public float maxIdleTime = 2.0f;
+
+        public float maxIdleTime = 5.0f;
+
         public float maxNPCIdleTime = 1.0f;
-        [Tooltip("Time in seconds for the object to fly to controller.")] public float tripTime = 0.3f;
+
+        [Tooltip("Time in seconds for the object to fly to controller.")]
+        public float tripTime = 0.3f;
+
         private float _startThrowTime;
+
         public float attractDist = 0.4f;
+
+        private StateManager _stateManager;
 
         private void Start()
         {
             ball = GameObject.Find("Ball");
             ballRb = ball.GetComponent<Rigidbody>();
+            ballTarget = GetComponent<BallTarget>();
+            ballTarget.SetTargets (players, child);
+            _stateManager =
+                GameObject
+                    .Find("stateManagerPrefab")
+                    .GetComponent<StateManager>();
+
+            // _grabInteractable = GetComponent<XRGrabInteractable>();
+            // _grabInteractable.interactionLayerMask =
+            //     LayerMask.GetMask("Nothing");
+            //TODO: temporary starting point, how would we start and what does that mean for the ball?:
+            SetStartVars();
+        }
+
+        private void SetStartVars()
+        {
             _currentGrabState = GrabState.Attach;
-            nextTarget = player1;
-            ballOwner = player1;
+            nextTarget = players[0];
+            ballOwner = players[1];
         }
 
         private void Update()
         {
-            UpdateObjectState();
+            if (_stateManager.currentState == _stateManager.trialState)
+            {
+                UpdateObjectState();
+            }
+            else
+            {
+                SetStartVars();
+            }
         }
 
         /// <summary>
@@ -80,7 +137,6 @@ namespace Assets.Scripts.BallNS
                     // TODO: spawn a new ball at the hand of a random player
                     ChangeObjectState(GrabState.Attach);
                 }
-
             }
 
             // The object is in its "grabbing" state, meaning it's moving towards the controller.
@@ -94,7 +150,6 @@ namespace Assets.Scripts.BallNS
                     //    _grabAnimationProgress += Time.deltaTime / _flyToControllerTimeSeconds;
                     //    _grabbedObjectRigidBody.position = Vector3.Lerp(_startPosition, ControllerManager.Instance.Position,
                     //        _animationCurve.Evaluate(_grabAnimationProgress));
-
                     //    // If the distance between the controller and the object is close enough, grab the object.
                     //    if (Vector3.Distance(_grabbedObjectRigidBody.position, ControllerManager.Instance.Position) <
                     //        ObjectSnapDistance)
@@ -107,10 +162,18 @@ namespace Assets.Scripts.BallNS
                     // {
                     //    ChangeObjectState(GrabState.Idle);
                     // }
+                    //If the grab button is held, move the object towards the controller using a lerp function.
+                    ChangeObjectState(GrabState.Idle);
                 }
                 else
                 {
-                    ball.transform.position = TossBall(_startThrowTime, tripTime, _startPosition, _endPosition);
+                    ball.transform.position =
+                        TossBall(_startThrowTime,
+                        tripTime,
+                        _startPosition,
+                        _endPosition);
+
+                    // Debug.Log("new position = " + ball.transform.position);
                     // if the ball triggers the ballCatcher gameobject we switch states
                     if (ballHasTriggered)
                     {
@@ -119,6 +182,7 @@ namespace Assets.Scripts.BallNS
                     }
                 }
             }
+
             // if the ball is in the "grabbed" state, the ball is attached to the controller or the hand of the NPC once it collides
             if (_currentGrabState == GrabState.Attach)
             {
@@ -131,7 +195,6 @@ namespace Assets.Scripts.BallNS
                     //    _grabbedobjectrigidbody.angularvelocity = controllermanager.instance.angularvelocity;
                     //    onobjectreleased();
                     //}
-
                     //if (ControllerManager.Instance.GetButtonPress(TriggerButton))
                     //{
                     //    // Keeps the object's original rotation as a starting point, and is otherwise locked to the controller
@@ -145,12 +208,10 @@ namespace Assets.Scripts.BallNS
                     //    _grabbedObjectRigidBody.angularVelocity =
                     //        ControllerManager.Instance.AngularVelocity * ObjectVelocityMultiplier;
                     //    _grabbedObjectRigidBody.velocity = ControllerManager.Instance.Velocity * ObjectVelocityMultiplier;
-
                     //    if (OnObjectReleased != null)
                     //    {
                     //        OnObjectReleased.Invoke(_grabbedObject.gameObject);
                     //    }
-
                     //    ChangeObjectState(GrabState.Idle);
                     //}
                 }
@@ -158,6 +219,8 @@ namespace Assets.Scripts.BallNS
                 {
                     // the ball is attracted to the hand of the current owner, and should be thrown away after a given time
                     idleTime += Time.deltaTime;
+
+                    // Debug.Log (idleTime);
                     if (idleTime >= maxNPCIdleTime)
                     {
                         Debug.Log("switching to throw");
@@ -176,11 +239,20 @@ namespace Assets.Scripts.BallNS
                 }
                 else
                 {
-                    var _pos = TossBall(_startThrowTime, tripTime, _startPosition, _endPosition);
+                    var _pos =
+                        TossBall(_startThrowTime,
+                        tripTime,
+                        _startPosition,
+                        _endPosition);
                     ball.transform.position = _pos;
-                    Debug.Log("new position = " + _pos);
-                    var _dist = (nextTarget.transform.position - ball.transform.position).magnitude;
-                    Debug.Log("dist: " + _dist);
+
+                    // Debug.Log("new position = " + _pos);
+                    var _dist =
+                        (
+                        nextTarget.transform.position - ball.transform.position
+                        ).magnitude;
+
+                    // Debug.Log("dist: " + _dist);
                     // the ball is moving from the previous owner to the new target, as soon it's in reach, we switch states
                     if (_dist <= attractDist)
                     {
@@ -205,6 +277,7 @@ namespace Assets.Scripts.BallNS
                 // Inform the object that it has been ungrabbed and set it to not be kinematic.
                 case GrabState.Idle:
                     IsObjectGrabbing = false;
+
                     //ball.ObjectUngrabbed();
                     ballRb.isKinematic = false;
                     break;
@@ -212,12 +285,12 @@ namespace Assets.Scripts.BallNS
                 case GrabState.Attract:
                     // the ball is in reach of the nextTarget so we want to attract it via a SLERP as a start TODO: visualise this
                     // WE REUSE THE THROW FUNCTION FOR NOW. REWRITE TO AN ATTRACT FUNCTION (if ball comes from child)
-
-
                     IsObjectGrabbing = true;
+
                     //ball.ObjectGrabbing();
                     ballRb.isKinematic = true;
                     _startObjectRotation = ball.transform.rotation;
+
                     //_startControllerRotation = ControllerManager.Instance.Rotation;
                     _startPosition = ball.transform.position;
                     _grabbedObject = ball;
@@ -240,6 +313,7 @@ namespace Assets.Scripts.BallNS
                         ball.transform.parent = ballOwner.transform;
                         ball.transform.localPosition = Vector3.zero;
                         ball.transform.localRotation = Quaternion.identity;
+
                         //ball.transform.position = ballOwner.transform.position;
                         idleTime = 0.0f;
                     }
@@ -247,15 +321,18 @@ namespace Assets.Scripts.BallNS
                     break;
                 // when the user releases the ball throw it, if it's an NPC who's throwing the ball, we have to calculate the trajectory of the ball.
                 case GrabState.Throw:
+                    ballTarget.SetNextTarget(currentOwner: ballOwner);
                     if (ballOwner.CompareTag("Child"))
                     {
                         idleTime = 0.0f;
-
+                        // when targetting the child, we want to throw the ball to the it's object
+                        nextTarget = ballTarget.GetNextTarget();
                     }
                     else
                     {
-                        // TODO: Decide next target first
-                        SetNextTarget();
+                        //when targetting the NPCs, we want to throw the ball towards their hands
+                        nextTarget = ballTarget.GetNextBallCatcher();
+
                         // ballRb.useGravity = true;
                         //ballRb.velocity = Vector3.zero;
                         ball.transform.parent = null;
@@ -268,7 +345,13 @@ namespace Assets.Scripts.BallNS
             }
         }
 
-        private Vector3 TossBall(float startTime, float tripTime, Vector3 mStartPosition, Vector3 mEndPosition)
+        private Vector3
+        TossBall(
+            float startTime,
+            float tripTime,
+            Vector3 mStartPosition,
+            Vector3 mEndPosition
+        )
         {
             var t = (Time.time - startTime) / tripTime;
             var pos = Vector3.Slerp(mStartPosition, mEndPosition, t);
@@ -277,28 +360,17 @@ namespace Assets.Scripts.BallNS
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Player"))//TODO: BallCatcher
+            if (
+                other.gameObject.CompareTag(triggerTag) //TODO: BallCatcher or player
+            )
             {
                 ballHasTriggered = true;
             }
         }
 
-        /// <summary>
-        /// TODO: TEMPORARY FUNCTION
-        /// SetNextTarget is a function to keep track of where our ball is going next (or should be going)
-        /// </summary>
-        /// <param name="target"></param>
-        private void SetNextTarget()
+        public GrabState GetCurrentGrabState()
         {
-            Debug.Log("Setting next target");
-            if (nextTarget == player1)
-            {
-                nextTarget = player2;
-            }
-            else
-            {
-                nextTarget = player1;
-            }
+            return _currentGrabState;
         }
     }
 }

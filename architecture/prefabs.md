@@ -107,6 +107,11 @@ When the child enters the game for the first time, we need to show a text block 
 child gets to see in-game menu to choose team from, this is a screen that is fixed in position, the child can look away from it towards the caregiver.
 if this is shown, no players should be on the field.
 
+**Sound from [Zapsplat.com](https://www.zapsplat.com)**
+
+
+
+
 ## Issues
 
 when parenting a ball, strange things happen. I think it's primarily because the ball was moving before and I've parented it with keeping the location. Yet this does probably NOT stop the movement due to the mass of the object? therefore the ball can be at large distances instead of attached to the hand (as intended)
@@ -133,3 +138,33 @@ preferences ==> general ==> Script changes while playing
 
 data bijhouden: 1 grote file of liever per topic aparte file, in 1 folder per kind?
 
+
+
+
+TODO: UI scherm aan de zijkant waarop je van scene kunt switchen?
+
+## TODO contingentie aanpassen
+
+statemanager: nu emotional vs practical , maar ook al competition vs ostracity?
+
+
+contingentie: wat mama zegt en of het goed of fout is
+
+isGoodTrial mag random zijn
+maar isGoodResponse is gelinkt aan het advies hier op
+
+
+tekst: zwevend in ruimte bij zorgfiguurn + pijltje naar de mond
+
+licht laten uitgaan bij eindigen?
+
+
+
+
+
+sporthall: achtergrond extra spelers + geluiden
+
+supporters aan de zijkant?
+
+
+**status**: checken of alle prefabs goed staan in beide scenes, kunnen we switchen?

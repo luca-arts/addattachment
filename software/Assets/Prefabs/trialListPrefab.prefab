@@ -41,11 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 237028949165162626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13066460c06598a4085638f7c297ad74, type: 3}
+  m_Script: {fileID: 11500000, guid: dbe0df09f453c0c93b24b2c6f9c17e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   trialType: 0
   contingencyLevel: 70
-  numberOfTrials: 10
+  numberOfTrials: 5
   trialsList: []
   currentTrial: 0

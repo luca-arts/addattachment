@@ -10,11 +10,13 @@ public class Player : MonoBehaviour
     public Color color = Color.red;
     // totalscore is the cumulative of all scores in the different rounds
     public int totalScore = 0;
+    public GameObject platform;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponentInChildren<Light>().color = color;
-    }
+        // GetComponentInChildren<Light>().color = color;
+        platform.GetComponent<Renderer>().material.color = color;
+    }   
 
     // Update is called once per frame
     void Update()
