@@ -1,12 +1,12 @@
-# TrustVR
+# Add Attachment
 
-## Welcome to GitHub Page for the TrustVR project
+## Welcome to GitHub Page for the Add Attachment project
 
-### TrustVR
+### Add Attachment
 
 #### description
 
-TrustVR is a research project initiated by the KUL department Clinical Psychology.
+Add Attachment is a research project initiated by the KUL department Clinical Psychology.
 
 A VR environment will be created in which we'll capture biometrics as well as user responses.
 

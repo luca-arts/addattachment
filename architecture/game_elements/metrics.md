@@ -7,6 +7,6 @@ In order to get an overview, we'll list them in this file as they get decided th
 |metric|type|how to calculate/record|sensor|in-game or data processing|
 |---|---|---|---|---|
 |engagement ball|flag|if a child always throws the ball immediately away, or is showing no interest at all in the ball|VR|in-game|
-
+|brain activity| EEG| EEG headset|EEG|in-game start and stop the recording|
 
 # decisions
