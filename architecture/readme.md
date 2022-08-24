@@ -43,18 +43,33 @@ A [[trial#count-down timer]] indicates that a new trial will start, or, if we ar
 
 ## timeline
 
+![](./imgs/common.png)
+![](./imgs/competition_emotion.png)
+
+
 ## sound design
 
 ## visual style
 
+I suggest going for a more cartoonesk Gorillaz like vibe: enough detail to get familiar with, enough abstract to be generic enough.
+
+Using this style, things look less realistic. Yet I believe children will understand that this is a game world. The NPCs could be their real friends.
+Also, it's easier to visualise this way results via the [[reward_system]]
+
+![](out.gif)
+
 ## architecture
 
-Unity app running on android device
+Unity app running on android device ([Pico Neo pro 3 eye](https://www.picoxr.com/us/neo3.html))
+
 
 on a separate computer:
 - have a python websocket to capture the data coming from unity & store it
 	- also use this websocket to set the name of the player?
+	- use this websocket to indicate when to start EEG/GSR recording (or better: give a CUE)
 - the EEG data export
-- the GSR data export 
+- the GSR data export
 - monitor what the player sees? [link](https://sdk.picovr.com/docs/FAQ/chapter_twentyseven.html)
 - 
+
+

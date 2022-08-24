@@ -29,7 +29,7 @@ structure:
 		- a setup file for each trial
 		- a file from KUL with their questionnaires.
 
-I suggest 
+I suggest the python
 
 
 # decisions
