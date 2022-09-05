@@ -17,7 +17,7 @@ style:
 
 ### high level flow
 
-![game overview](./imgs/game_overview.png)
+![game overview](game_overview.png)
 
 We want to induce competitive stress for a child and monitor his/her response.  
 
@@ -43,8 +43,8 @@ A [[trial#count-down timer]] indicates that a new trial will start, or, if we ar
 
 ## timeline
 
-![](./imgs/common.png)
-![](./imgs/competition_emotion.png)
+![](common.png)
+![](competition_emotion.png)
 
 
 ## sound design
@@ -70,6 +70,5 @@ on a separate computer:
 - the EEG data export
 - the GSR data export
 - monitor what the player sees? [link](https://sdk.picovr.com/docs/FAQ/chapter_twentyseven.html)
-- 
 
 

@@ -41,8 +41,8 @@ Needs to be rigged for animation.
 
 ### caregiver face
 #### HUD instead of in-game conversation
-perhaps interesting to have a 2D sprite showing the conversation? ![](./imgs/MGS1_Codec_2.webp) 
-Combination of the 3D world environment with a HUD (AR within VR) gives perhaps more emotional depth? ![HUD](./imgs/hud.jpg)
+perhaps interesting to have a 2D sprite showing the conversation? ![](MGS1_Codec_2.webp) 
+Combination of the 3D world environment with a HUD (AR within VR) gives perhaps more emotional depth? ![HUD](hud.jpg)
 
 #### styling the mother
 the look of the mother: in-game vs out of the game #TBD:

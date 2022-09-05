@@ -1,7 +1,7 @@
 # targets
 ## coloured pipes
 
-![](./imgs/pipes.jpeg)
+![](pipes.jpeg)
 
 - three coloured pipes, which either/combination
 	- move a little bit, sometimes fast, sometimes slow ('snakes')
@@ -9,7 +9,7 @@
 	- the ball which we throw switches colour, make sure you send the ball in the right pipe. Yet the colour changes (bomb effect with glow "he's almost going to change color!")
 
 ## trash cans
-![](./imgs/blikvanger.jpg)
+![](blikvanger.jpg)
 
 there are multiple trash cans positioned over the playfield, above each trash can there's a spot, showing which trash can is the target;
 

@@ -24,7 +24,7 @@ A VR environment will be created in which we'll capture biometrics as well as us
     
 ## game design
 
-in [game design folder](./architecture/readme.md) you can find the description of the game mechanics and actors.
+in [game design folder](docs/architecture/readme.md) you can find the description of the game mechanics and actors.
 **Tip** in order to view the content with correct links, I've used [obsidian](https://obsidian.md/) to create the docs. install it and open the folder contents in the app for correct linkage. It's an awesome notetaking tool in any case.
 
 ### repository structure
