@@ -29,7 +29,7 @@ structure:
 		- a setup file for each trial
 		- a file from KUL with their questionnaires.
 
-I suggest the python
+The unity application should be the master, the EEG (python script with LSLMarker stream) and GSR (openframeworks+ LSLMarker stream)
 
 
 # decisions

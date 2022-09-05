@@ -14,9 +14,9 @@ The player is seated in some sort of chair, in front of you there's a large slin
 When it's your turn to shoot, a ball appears next to you. You grab it and attach it to the slingshot. 
 Once this is done, you can pull the slingshot and shoot it. The harder you pull, the harder the ball flies.
 
-![](slingshot.jpg)
+![slingshot](slingshot.jpg)
 On the other side of the room, there are either pipes or trash nets which serve as [[targets]] for the balls. #TBD
-![](pipes.jpeg) ![](blikvanger.jpg)
+![pipes](pipes.jpeg) ![buckets](blikvanger.jpg)
 
 #### shooting
 - assistance: difficulty level?
@@ -31,7 +31,7 @@ Depending on how fast you can score, you get an extra point?
 %%### Balancing act
 
 In orde to avoid having fast movements, the child has to use both controllers to manipulate a trajectory a ball is flowing. Think Tony Hawk pro skater balancing:
-![](balance.webp)webp)%%
+![balance](balance.webp)webp)%%
 
 
 ## assets

@@ -3,7 +3,9 @@
 We get different responses based on the contingency level given to the current player.
 
 ## contingency level
-Necessary to know? If we hard-code the trials, we can hardcode all parameters as well?
+Is it necessary to know this in the game structure?
+If we hard-code the trials, we can hardcode all parameters as well.
+
 #TBD
 
 ## visualising the responses

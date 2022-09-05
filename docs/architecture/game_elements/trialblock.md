@@ -6,7 +6,7 @@ The block starts with:
 - resetting the scores+[[score_board]]
 - deciding the name of the trialblock:
 	- block\_<date:DDMMYYYY>\_<starthour:HHMM>\_name
-	- this name is used to set up the [[websocket]]
+	- this name is used to set up the [[Data streams]]
 - if the last trial is running, show a "congrats" message when finishing instead restarting the [[trial]], also have the [[score_board]] more in view
 
 
