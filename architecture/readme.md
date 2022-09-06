@@ -17,6 +17,8 @@ style:
 
 ### high level flow
 
+Angry Birds
+
 ![game overview](./imgs/game_overview.png)
 
 We want to induce competitive stress for a child and monitor his/her response.  
@@ -57,6 +59,10 @@ Using this style, things look less realistic. Yet I believe children will unders
 Also, it's easier to visualise this way results via the [[reward_system]]
 
 ![](out.gif)
+
+important:
+
+![](./imgs/Mori_Uncanny_Valley.svg.png)
 
 ## architecture
 
