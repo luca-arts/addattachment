@@ -43,8 +43,8 @@ A [[trial#count-down timer]] indicates that a new trial will start, or, if we ar
 
 ## timeline
 
-![](common.png)
-![](competition_emotion.png)
+![timeline](./imgs/common.png)
+![timeline2](./imgs/competition_emotion.png)
 
 
 ## sound design
@@ -56,7 +56,7 @@ I suggest going for a more cartoonesk Gorillaz like vibe: enough detail to get f
 Using this style, things look less realistic. Yet I believe children will understand that this is a game world. The NPCs could be their real friends.
 Also, it's easier to visualise this way results via the [[reward_system]]
 
-![](out.gif)
+![cartoon](./imgs/out.gif)
 
 ## architecture
 

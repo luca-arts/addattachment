@@ -42,4 +42,4 @@ a state machine switching the trial phases and updating the trialnumber once a t
 
 Large numbers counting down on the screen, with faded lights/foggy view?
 
-![countdown_timer](countdown_timer.png)
+![countdown_timer](./imgs/countdown_timer.png)
