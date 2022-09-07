@@ -14,6 +14,9 @@ three approaches: we capture the data via the emotibit oscilloscope.
 2. We can transmit the data over OSC towards a python capture script. This can be tied to markers given from Unity?
 3. We create an LSL marker stream from unity to annotate a stream.
 
+### Example Data
+
+example data can be found in folder [emotibit](./emotibit/)
 
 ### LSL approach
 
@@ -21,14 +24,7 @@ to test you can generate an LSL stream via [ofxLSL](https://github.com/EmotiBit/
 
 also adapt the oscilloscope parameters: https://github.com/EmotiBit/EmotiBit_Docs/blob/master/Working_with_emotibit_data.md/#EmotiBit-Oscilloscope 
 
-
-Now, the dataparser splits the saved data file from the SD card into multiple separate csv files per type. **yet** I can't find the "hello" "world" markers from the example stream in the separate files. Where are thou??
-
-==> the <name>\_UN file has notes written in it (from the oscilloscope)
-====> how does one transmit a log towards the device?
-====> we could leverage this as well to send markers to the data
-
-**found it** the \_LM file is the one containing the markers, with their timings.
+LSL converted markers can be found, after parsing the data in the** **\_LM** file, with their timings.
 
 ### unity
 
