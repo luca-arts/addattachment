@@ -1,8 +1,8 @@
 # caregiver
 ## overview
-The caregiver is the mother of the child.
-She gives good or bad [[advice]] based on the [[advice#contingency level]].
-The caregiver should always be in peripheral sight of the child.
+>The caregiver is the mother of the child.
+>	She gives good or bad [[advice]] based on the [[advice#contingency level]].
+>	The caregiver should always be in peripheral sight of the child.
 
 
 ## looking at the caregiver

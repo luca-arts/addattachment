@@ -1,4 +1,6 @@
 # targets
+> Multiple options of targets which can have a differing feel, can be decided along the way.
+
 ## coloured pipes
 
 ![pipes](./imgs/pipes.jpeg)

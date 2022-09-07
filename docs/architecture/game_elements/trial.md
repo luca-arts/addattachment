@@ -9,7 +9,6 @@ Per trial some metrics are defined:
 4. Response for the caregiver: string (+ perhaps an audio sample)
 
 
-
 ## pre trial
 
 #TBD Correct that we give advice **after** a trial?
@@ -31,7 +30,6 @@ We record whether the child did look at the caregiver [[metrics]]
 ### count-down timer
 
 after giving the score, a countdown is shown on the screen, indicating that the new trial is getting started. We move up one trial in the [[trialblock]] and set the phase to pretrial again.
-^2d885f
 
 ## assets
 

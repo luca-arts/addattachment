@@ -1,12 +1,15 @@
 # shooting system
 
+>In shooting system we take a closer look at the shooting mechanism. 
+>We want to child to be seated, yet have the feeling to be participating in a real competition
+>We want to be able to influence the performance of the child when needed
+
 -   Necessary to be seated and not to move too much 
 	-   EEG readings otherwise compromised
 ## overview
 
 I have one main concepts in mind: 
 - the slingshot
-%%- the balancing act%%
 
 ### slingshot
 
@@ -28,16 +31,16 @@ On the other side of the room, there are either pipes or trash nets which serve 
 Having the ball in the correct target gives 1 point.
 Depending on how fast you can score, you get an extra point?
 
-%%### Balancing act
-
-In orde to avoid having fast movements, the child has to use both controllers to manipulate a trajectory a ball is flowing. Think Tony Hawk pro skater balancing:
-![balance](balance.webp)webp)%%
-
-
 ## assets
 
 ### slingshot
 
 we need a slingshot with which we can interact
 
-###
+### balls
+
+colored balls, perhaps taking their color only slowly?
+
+Or changing color after time? 
+
+! We want to be able to steer the performance of the child. I suggest we have some assistive trajectory change when we want to help the child.

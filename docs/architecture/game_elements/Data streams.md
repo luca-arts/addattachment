@@ -1,8 +1,15 @@
 # Data streams
+> we have multiple datastreams to be connected throughout the research project. 
+> All data eventually needs to be captured on a single computer, in order to process that later.
 
 Past researchers created a model stream to be used with GSR & EEG data. [LabStream layer](https://github.com/labstreaminglayer/), check out the [documentation](https://labstreaminglayer.readthedocs.io/)!
 We'll leverage this framework and use it in Unity and with our EEG and GSR devices.
 
+Here's an overview. 
+
+	Warning, this is **not** how it's implemented in reality, this is merely to give a sense of how the datastreams. In reality all OpenBCI and emotibit data is streaming towards the PC. The LSLMarker stream injects these streams. Yet it is easier to comprehend that the LSLMarker stream intervenes directly in the hardware.
+
+![datastreams](./imgs/datastreams.png)
 ## Data structure
 
 - a name for the folder creation:
@@ -14,6 +21,7 @@ We'll leverage this framework and use it in Unity and with our EEG and GSR devic
 	- EOG data
 	- trust in caregiver
 	- something else? #TBD 
+	- 
 ## Unity side
 
 Unity is the Master, creating the labstream layer: [LSL for Unity](https://github.com/labstreaminglayer/LSL4Unity)

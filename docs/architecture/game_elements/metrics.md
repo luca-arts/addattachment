@@ -1,18 +1,18 @@
 # metrics
 
-in the TrustVR project, we'll get to record differing parameters.
+>in this project, we'll get to record differing parameters.
 
 In order to get an overview, we'll list them in this file as they get decided throughout the research project.
 
 |metric|type|how to calculate/record|sensor|in-game or data processing|
 |---|---|---|---|---|
-|engagement ball|flag|if a child always throws the ball immediately away, or is showing no interest at all in the ball|VR|in-game|
+|engagement ball|flag|if a child always shoots the ball immediately away, or is showing no interest at all in the ball|VR|in-game|
 |brain activity| EEG| EEG headset|EEG|in-game start and stop the recording|
 
 ## metrics transfer
 the VR application will be running on the android device. Either we try to send all data wirelessly/via usb cable to the attached computer (Need to open port?)
 Or we try to save the data on the VR headset and later transfer it to the server.
-I think saving it on the VR headset would be safer for the course of the experiment?
+I prefer transmitting it via a websocket/MQTT.
 #POC
 
 ## metrics folder
@@ -29,7 +29,7 @@ structure:
 		- a setup file for each trial
 		- a file from KUL with their questionnaires.
 
-The unity application should be the master, the EEG (python script with LSLMarker stream) and GSR (openframeworks+ LSLMarker stream)
+The unity application should be the master, the EEG (python script with LSLMarker stream) and GSR (openframeworks+ LSLMarker stream) are masons.
 
 
 # decisions

@@ -1,5 +1,9 @@
 # NPC player
 
+>The participant needs to feel competitive stress.
+>We'll show a second participant in screen performing alongside you. 
+>This NPC can be better or worse than the participant depending on settings.
+
 NPC = Non Playable Character
 
 There's always a player which you can see performing.
