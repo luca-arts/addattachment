@@ -1,0 +1,5 @@
+Import the package
+
+Drag the GameManager prefab in the HUD
+
+Go to the button child and add there the gamemanager with StartNewTrial function for onClick event.
