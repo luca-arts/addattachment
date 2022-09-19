@@ -1,4 +1,4 @@
-# Overview of hardware components
+# Overview of Hardware Components
 
 We'll be using following hardware components:
 
@@ -7,8 +7,13 @@ We'll be using following hardware components:
 3. Emotibit biometric sensor
 
 ## VR
+
 [[VR Glass]]
+
 ## EEG
+
 [[EEG]]
+
 ## GSR
+
 [[GSR]]

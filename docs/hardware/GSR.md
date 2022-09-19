@@ -1,10 +1,10 @@
 # Emotibit
 
-## installation
+## Installation
 
-https://github.com/EmotiBit/EmotiBit_Docs
+<https://github.com/EmotiBit/EmotiBit_Docs>
 
-## approach
+## Approach
 
 sends data via WiFi (credentials on SD card) ==> need for accessible network (no eduroam!)
 
@@ -18,15 +18,15 @@ three approaches: we capture the data via the emotibit oscilloscope.
 
 example data can be found in folder [emotibit](./emotibit/)
 
-### LSL approach
+### LSL Approach
 
 to test you can generate an LSL stream via [ofxLSL](https://github.com/EmotiBit/ofxLSL#example-for-generating-marker-stream)
 
-also adapt the oscilloscope parameters: https://github.com/EmotiBit/EmotiBit_Docs/blob/master/Working_with_emotibit_data.md/#EmotiBit-Oscilloscope 
+also adapt the oscilloscope parameters: <https://github.com/EmotiBit/EmotiBit_Docs/blob/master/Working_with_emotibit_data.md/#EmotiBit-Oscilloscope> 
 
 LSL converted markers can be found, after parsing the data in the** **\_LM** file, with their timings.
 
-### unity
+### Unity
 
 add package via package mgr ==> add from git url: [LSL4Unity](https://github.com/labstreaminglayer/LSL4Unity)
 

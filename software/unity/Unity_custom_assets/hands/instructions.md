@@ -1,10 +1,10 @@
 # Hands
 
-## goal
+## Goal
 
 Have two animated hands as controllers which can pinch and grab.
 
-## implementation
+## Implementation
 
 1. import the custom asset in Unity
 2. Add an XR Origin to the scene

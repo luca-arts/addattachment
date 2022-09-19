@@ -1,4 +1,4 @@
-# tips
+# Tips
 
 [animation rigging to get more interactive players](https://www.youtube.com/watch?v=T7AdzwW7n2I)
 
@@ -12,9 +12,7 @@
 
 [writing unit tests](https://www.raywenderlich.com/9454-introduction-to-unity-unit-testing)
 
-
-
-## unity and ubuntu and picoVR
+## Unity and Ubuntu and picoVR
 
 1. Installing unity on Ubuntu 22.04 gave some issues, you need to download the hub via flatpack, not the way they advice! [link to download archive](https://unity3d.com/get-unity/download/archive)
 2. to get the Pico VR device recognized on ubuntu 22.04, I had to install adb (`sudo apt install -y adb` ) and then restart the server:

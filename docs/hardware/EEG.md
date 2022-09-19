@@ -1,7 +1,7 @@
 # OpenBCI EEG Headset
 
-## physical adaption
+## Physical Adaption
 
-## testing
+## Testing
 
 In the OpenBCI GUI we check if we get a signal from all electrodes. 
