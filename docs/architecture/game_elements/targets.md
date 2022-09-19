@@ -13,6 +13,6 @@
 ## trash cans
 ![buckets](./imgs/blikvanger.jpg)
 
-there are multiple trash cans positioned over the playfield, above each trash can there's a spot, showing which trash can is the target;
-
+there are multiple trash cans positioned over the playfield. 
+Above each trash can there's a spot aimed downwards, showing which trash can is the current target.
 There's a random countdown for when to switch spots and thus to decide which is the correct goal.

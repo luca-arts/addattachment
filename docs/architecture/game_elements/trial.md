@@ -16,7 +16,7 @@ Per trial some metrics are defined:
 ## trial
 The player and the NPC shoot balls alternating: one at the time, up to 5 balls. 
 This should be fast paced action.
-[[shooting system]]
+[[shooting_system]]
 
 
 ## post trial

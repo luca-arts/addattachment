@@ -31,11 +31,12 @@ We want to induce competitive stress for a child and monitor his/her response to
 
 #### the child enters the VR space
 
-1. First an [[test-trial]] is given to the game environment and mechanics. 
-2. A [[trial]] is run a couple of times in a row, forming a [[trialblock]]
-3. During a trial, we measure different [[metrics]]
+1. The child enters the [[environment]].
+2. First an [[test-trial]] is given to the game environment and mechanics. 
+3. A [[trial]] is run a couple of times in a row, forming a [[trialblock]]
+4. During a trial, we measure different [[metrics]]
 
-	- [[shooting system]]: In a trial, a child is seated in which he can shoot a ball with a giant slingshot towards three pipes. 
+	- [[shooting_system]]: In a trial, a child is seated in which he can shoot a ball with a giant slingshot towards three pipes. 
 	
 	- [[targets]]: These pipes try to suck the ball towards them. 
 	
@@ -46,6 +47,9 @@ We want to induce competitive stress for a child and monitor his/her response to
 6. The [[caregiver]] gives feedback.  
 7. After this, you can [[caregiver#score the caregiver]]. 
 8. A [[trial#count-down timer]] indicates that a new trial will start, or, if we are at the end, a closing screen will be shown.
+## asset list
+
+a brief overview of all assets that need to be created: [[assets]]
 
 ## timeline
 

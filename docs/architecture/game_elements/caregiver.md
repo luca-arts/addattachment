@@ -31,15 +31,19 @@ Pulling one of the triggers confirms the choice.
 
 ## assets
 
-#### rating bar
+### rating bar
  see [[caregiver#game mechanic]]
 
-### caregiver body
+### mother
+#### caregiver body
 Female body, slightly to be adapted to the mothers figure?
 Needs to be rigged for animation.
 #TBD
 
-### caregiver face
+#### caregiver face
+Nice to have: be able to adapt the face in- or pregame to resemble more or less the mother.
+
+### caregiver comms system
 #### HUD instead of in-game conversation
 perhaps interesting to have a 2D sprite showing the conversation? ![HUD_MGS](MGS1_Codec_2.jpg) 
 

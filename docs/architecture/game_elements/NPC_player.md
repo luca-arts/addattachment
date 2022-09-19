@@ -21,8 +21,8 @@ this should be a player from a list or can be just one player? #TBD
 If we want to play/compete against multiple players, we need more characters.
 
 #### interaction with the slingshot
-this animation should be recorded! 
+this animation should be recorded?
 
-## chair
+### chair
 
 we don't get to see our own chair, yet the other chair should be clearly visible.
