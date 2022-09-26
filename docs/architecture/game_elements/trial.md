@@ -4,9 +4,8 @@ A trial exists of a pre-trial phase, a trial phase and a post-trial phase.
 Per trial some metrics are defined:
 
 1. number of the trial: integer
-2. Assistance level for the NPC: integer
-3. Assistance level for the child: integer
-4. Response for the caregiver: string (+ perhaps an audio sample)
+2. Assistance level for the child: bool
+3. Response for the caregiver: string (+ perhaps an audio sample)
 
 
 ## pre trial

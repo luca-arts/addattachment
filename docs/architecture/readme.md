@@ -55,6 +55,7 @@ We want to induce competitive stress for a child and monitor his/her response to
 ## sound design
 
 	#TBD
+using [FMOD](https://www.fmod.com/docs/2.02/unity/integration-tutorial.html)
 
 ## visual style
 

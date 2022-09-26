@@ -8,6 +8,10 @@ In order to get an overview, we'll list them in this file as they get decided th
 |---|---|---|---|---|
 |engagement ball|flag|if a child always shoots the ball immediately away, or is showing no interest at all in the ball|VR|in-game|
 |brain activity| EEG| EEG headset|EEG|in-game start and stop the recording|
+| response read time| VR||||
+| start of new trial| VR|||
+| eye tracking of response?| EOG||
+
 
 ## metrics transfer
 the VR application will be running on the android device. Either we try to send all data wirelessly/via usb cable to the attached computer (Need to open port?)

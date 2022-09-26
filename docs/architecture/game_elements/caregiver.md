@@ -46,18 +46,23 @@ perhaps interesting to have a 2D sprite showing the conversation? ![HUD_MGS](MGS
 Combination of the 3D world environment with a HUD (AR within VR) gives perhaps more emotional depth?
 ![HUD](hud.jpg)
 
+- We definitely want a button to command them to push it before restarting the trial. 
+- We keep track of the time of reading till pushing #metric
+- we also set the marker in data of appearance of the HUD/feedback + eye tracking if not via HUD.
+
 #### styling the mother
 
 *Can or should the participant be able to style his/her own mother?*
 
 the look of the mother: in-game vs out of the game #TBD:
-	- out of unity:
+	%%- out of unity:
 		- Can we use volumetric scanning to capture the mothers face realistically enough?
 		- Can we let the child firstly create his/her mothers face?
-			- this could be done outside of VR, lowering the bar to enter the VR environment **YET** This means we have to recompile each time, raising the bar for errors?
+			- this could be done outside of VR, lowering the bar to enter the VR environment **YET** This means we have to recompile each time, raising the bar for errors?%%
 	- in-game:
 		- a selection mechanism in which the child can choose hairstyles and such. Could work in a non-realistic style.
 		- Attention: this could take more time in-game?
+	- Nice to have: tweaking a mother persona (colour of hair, eyes, length, ...)
 
 ## animation
 I think a lot of focus can be put in the animation of different emotions of the face. 

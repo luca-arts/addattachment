@@ -12,3 +12,9 @@ We'll be using following hardware components:
 [[EEG]]
 ## GSR
 [[GSR]]
+
+
+## naive walkthrough
+
+This is a non-optimised flow to check how to fix things necessary.
+

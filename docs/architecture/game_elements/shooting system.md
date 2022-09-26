@@ -16,15 +16,17 @@ I have one main concepts in mind:
 The player is seated in some sort of chair, in front of you there's a large slingshot.
 When it's your turn to shoot, a ball appears next to you. You grab it and attach it to the slingshot. 
 Once this is done, you can pull the slingshot and shoot it. The harder you pull, the harder the ball flies.
-
+? Bart Simpson Slingshot ?
 ![slingshot](./imgs/slingshot.jpg)
 On the other side of the room, there are either pipes or trash nets which serve as [[targets]] for the balls. #TBD
 ![pipes](./imgs/pipes.jpeg) ![buckets](./imgs/blikvanger.jpg)
 
 #### shooting
-- assistance: difficulty level?
+- assistance: 
 	- how will the NPC be assisted
+		- if the assistance is allowed for the real player in config file, then we make sure the NPC scores less/badly
 	- how can the player be assisted?
+		- If the ball is in reach of goal AND assistance is allowed (in config file), then we aid the trajectory of the ball.
 - Have an assisting lineray showing were the ball would approx fly?
 
 #### scoring
