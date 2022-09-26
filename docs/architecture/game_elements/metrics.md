@@ -1,4 +1,4 @@
-# metrics
+# Metrics
 
 >in this project, we'll get to record differing parameters.
 
@@ -13,15 +13,20 @@ In order to get an overview, we'll list them in this file as they get decided th
 | eye tracking of response?| EOG||
 
 
-## metrics transfer
+## Metrics Transfer
+
 the VR application will be running on the android device. Either we try to send all data wirelessly/via usb cable to the attached computer (Need to open port?)
+
 Or we try to save the data on the VR headset and later transfer it to the server.
+
 I prefer transmitting it via a websocket/MQTT.
+
 #POC
 
-## metrics folder
+## Metrics Folder
 
 structure:
+
 - per child we have a folder
 - in the folder we have:
 	- two folders for each block
@@ -35,17 +40,21 @@ structure:
 
 The unity application should be the master, the EEG (python script with LSLMarker stream) and GSR (openframeworks+ LSLMarker stream) are masons.
 
-
-# decisions
+# Decisions
 
 ## EOG
+
 We put some objects on the [[Unity_layers#eye]]. These metrics we store per trial in the metrics file.
 
-### metrics of EOG
+### Metrics of EOG
+
 Per trial:
+
 - per contact:
 	- when did the child look at the caregiver?
 	- for how long?
 - given a minimum time between two consecutive 'looks', how often did the child look at the caregiver?
+
 Per block of trials:
+
 - do we need some metric? These can be deducted I believe out of the trials

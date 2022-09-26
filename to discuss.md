@@ -1,6 +1,6 @@
-# things to discuss
+# Things to Discuss
 
-## physical setup
+## Physical Setup
 
 EEG headset + GSR OK
 
@@ -10,10 +10,12 @@ VR glass gemakkelijkste als we het kunnen hangen van achter het kind en aanpasse
 
 slingshot ok? Er zijn denk ik voldoende manieren om dit stressy te krijgen, maar we behouden het zittend gegeven, goed voor de EEG metingen.
 
-## contingency
+## Contingency
 
 hoe definieren we dit bij competitieve stress? 
+
 Voorbeeld: 80% cont:
+
 - Wat doet de tegenspeler? 
 	- Blijft die altijd op zelfde niveau spelen? 
 	- Speelt hij soms beter/slechter?

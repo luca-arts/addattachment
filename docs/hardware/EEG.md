@@ -1,10 +1,11 @@
 # OpenBCI EEG Headset
 
-## physical adaption
+## Physical Adaption
 
-## testing
+## Testing
 
 In the OpenBCI GUI we check if we get a signal from all electrodes. 
+<<<<<<< HEAD
 
 ## Brainflow library
 
@@ -13,3 +14,5 @@ To solve this, remove it if it was installed via conda. Install via pip again.
 
 
 Inserting markers gives an error, why??
+=======
+>>>>>>> 0026cae5192f3e64703937b6dedad855577db1ea

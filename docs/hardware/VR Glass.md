@@ -2,19 +2,20 @@
 
 [product link](https://www.picoxr.com/us/neo3.html)
 
-# eye tracking
+# Eye Tracking
 
 Tobii tracking is added to the device
 
-## connecting to second screen
+## Connecting to Second Screen
 
 Via displayport cable
 
-## Unity development for Picon Neo Eye 3 Pro
+## Unity Development for Picon Neo Eye 3 Pro
 
-### prerequisites
+### Prerequisites
 
 In unity you need to add next packages manually, via "window -> package manager -> add from disk":
+
 - [Pico Unity Integration SDK ](https://developer-global.pico-interactive.com/sdk)
 - [Tobii SDK](https://vr.tobii.com/sdk/downloads/)
 
@@ -32,15 +33,14 @@ Next adapt following settings:
 
 > Tip: visit [this link](https://vr.tobii.com/sdk/develop/unity/getting-started/pico-neo-3-pro-eye/) to get started
 
-### Set up VR space
+### Set up VR Space
 
 Check [this link](https://developer-global.pico-interactive.com/document/unity)
-
 
 ### VR Grabbable
 
 **Releasing an object**
+
 Use the "Selected Exited" event to release an object. (create a function and attach it)
 
 **showing trajectory**
-

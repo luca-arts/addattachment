@@ -1,4 +1,4 @@
-# NPC player
+# NPC Player
 
 >The participant needs to feel competitive stress.
 >We'll show a second participant in screen performing alongside you. 
@@ -7,22 +7,25 @@
 NPC = Non Playable Character
 
 There's always a player which you can see performing.
+
 His/her performance has NO influence whatsoever on your performance.
 
 He/she should always be scoring mediocre, so that we can be better than they can.
 
 The NPC has the same setup as we do, it's a player, sitting in a chairlike object with a huge slingshot in front of him/her.
 
-## assets
+## Assets
 
-### game character
+### Game Character
 
 this should be a player from a list or can be just one player? #TBD 
+
 If we want to play/compete against multiple players, we need more characters.
 
-#### interaction with the slingshot
-this animation should be recorded! 
+#### Interaction with the Slingshot
 
-## chair
+this animation should be recorded?
+
+### Chair
 
 we don't get to see our own chair, yet the other chair should be clearly visible.
