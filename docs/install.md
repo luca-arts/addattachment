@@ -25,3 +25,5 @@ you need:
 [Pico xr SDK](https://developer.pico-interactive.com/sdk)
 [Tobii XR SDK]()
 [unity XR interaction toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.0/manual/installation.html)
+[Nuget Package manager](https://github.com/GlitchEnzo/NuGetForUnity)
+install **WebSocketSharp-netstandard** via NuGet

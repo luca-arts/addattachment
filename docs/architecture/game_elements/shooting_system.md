@@ -23,14 +23,17 @@ Once this is done, you can pull the slingshot and shoot it. The harder you pull,
 ? Bart Simpson Slingshot ?
 ![slingshot](./imgs/slingshot.jpg)
 
+We make use of Unity's spring joints to shoot the balls away for the real player, yet we also must be able to correct the ball towards the right goal? #TBD_Thomas_waterzooi
+(Slerp? gravity? pulling force from correct target?)
+
+Also the NPC we should steer the ball into the correct or incorrect direction. (Slerp)
+
+## targets
+
 On the other side of the room, there are either pipes or trash nets which serve as [[targets]] for the balls. #TBD
 
 ![pipes](./imgs/pipes.jpeg) ![buckets](./imgs/blikvanger.jpg)
 
-<<<<<<< HEAD:docs/architecture/game_elements/shooting system.md
-#### shooting
-- assistance: 
-=======
 #### Shooting
 
 - assistance: difficulty level?

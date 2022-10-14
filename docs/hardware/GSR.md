@@ -14,6 +14,10 @@ three approaches: we capture the data via the emotibit oscilloscope.
 2. We can transmit the data over OSC towards a python capture script. This can be tied to markers given from Unity?
 3. We create an LSL marker stream from unity to annotate a stream.
 
+	update:
+	from [link](https://www.reddit.com/r/EmotiBit/comments/xlxmzs/timestamping_osc_data/) it came to my attention that there's **no** timestamp present in the OSC stream, which I was planning to capture. Timestamping is insecure. 
+	**Conclusion** It is best to use the SD card to save the data!
+
 ### Example Data
 
 example data can be found in folder [emotibit](./emotibit/)
@@ -21,6 +25,11 @@ example data can be found in folder [emotibit](./emotibit/)
 ### LSL Approach
 
 to test you can generate an LSL stream via [ofxLSL](https://github.com/EmotiBit/ofxLSL#example-for-generating-marker-stream)
+
+
+### starting via python?
+
+check [link](https://github.com/EmotiBit/EmotiBit_Docs/blob/master/Working_with_emotibit_data.md#emotibit-data-types) to see if we can use serial commands?
 
 also adapt the oscilloscope parameters: <https://github.com/EmotiBit/EmotiBit_Docs/blob/master/Working_with_emotibit_data.md/#EmotiBit-Oscilloscope> 
 

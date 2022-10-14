@@ -6,11 +6,14 @@ Per trial some metrics are defined:
 
 1. number of the trial: integer
 2. Assistance level for the child: bool
+	1. This implicates:
+		2. If True: the child gets aided to win
+		3. If False: the child is **not** allowed to win
 3. Response for the caregiver: string (+ perhaps an audio sample)
 
 ## Pre Trial
 
-#TBD Correct that we give advice **after** a trial?
+Nothing to be done here, I guess.
 
 ## Trial
 
@@ -20,11 +23,15 @@ This should be fast paced action.
 
 [[shooting_system]]
 
+If the trial is with assistance, we help either the child, or we make the NPC to not score (or both).
+
 ## Post Trial
 
 The [[caregiver]] gives [[advice]] to the child. 
 
 #TBD correct that the child **does not have** to watch the caregiver in order to get the response?
+
+
 
 The child gets a menu to score the caregivers response. [[caregiver#score the caregiver]]
 
