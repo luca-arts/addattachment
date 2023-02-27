@@ -1,10 +1,14 @@
-# Test Trial
+# Tutorial
 
-At the start of a block, a child gets explanation on how the game mechanics work.
+At the start of the first block, a child gets explanation on how the game mechanics work.
 
-One other player is in view, to show how to correctly play the ball.
+No other player is in view.
+The child arrives at a white space.
+Only the slingshot and a ball is shown, together with the moving rings.
 
-The caregiver is allowed to give feedback already.
+No caregiver is in view
+
+A voice guides the child, this is a **different** voice than the one of the caregiver!
 
 We'll indicate via the [[Data streams]] that for the first block, there's a test. Yet for the second block, we can go straight to the real evaluation? #TBD 
 

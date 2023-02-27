@@ -7,10 +7,9 @@
 ## Table of Contents
 
 ```toc 
-style: 
-	number 
-	min_depth: 1 
-	max_depth: 6 
+style: number 
+min_depth: 1 
+max_depth: 6 
 ```
 
 ## Game Goal
@@ -33,7 +32,7 @@ We want to induce competitive stress for a child and monitor his/her response to
 #### The Child Enters the VR Space
 
 1. The child enters the [[environment]].
-2. First an [[test-trial]] is given to the game environment and mechanics. 
+2. First an [[Tutorial]] is given to the game environment and mechanics. 
 3. A [[trial]] is run a couple of times in a row, forming a [[trialblock]]
 4. During a trial, we measure different [[metrics]]
 
@@ -43,11 +42,11 @@ We want to induce competitive stress for a child and monitor his/her response to
 	
 	- [[reward_system]]: When we shoot the ball in the correct hole, we get some points.  
 
-4. Alternating with us, another [[NPC_player]] shoots as well, and we see how (s)he performs.  
-5. After 5 shots for both players, the trial is finished, and the results are shown on the [[score_board]]. 
-6. The [[caregiver]] gives feedback.  
-7. After this, you can [[caregiver#score the caregiver]]. 
-8. A [[trial#count-down timer]] indicates that a new trial will start, or, if we are at the end, a closing screen will be shown.
+5. Alternating with us, another [[NPC_player]] shoots as well, and we see how (s)he performs.  
+6. After 5 shots for both players, the trial is finished, and the results are shown on the [[score_board]]. 
+7. The [[caregiver]] gives feedback.  
+8. After this, you can [[caregiver#score the caregiver]]. 
+9. A [[trial#count-down timer]] indicates that a new trial will start, or, if we are at the end, a closing screen will be shown.
 
 ## Asset List
 
